@@ -158,5 +158,14 @@ formulario.addEventListener('submit', function (evento) {
 
 function navegarPaginaExito() {
     //   desarrollar la funcion aqui
-
+    const btnSubmit = document.querySelector("form button");
+    if (estadoErroresOK.email && estadoErroresOK.password && estadoErroresOK.rol && estadoErroresOK.terminos) {
+        btnSubmit.setAttribute("disabled", "disabled");
+        btnSubmit.textContent = "Cargando...";
+        setTimeout(() => {
+            location.replace("./usuario.html");
+        }, 3000);
+    }
 }
+
+formulario.addEventListener("submit", navegarPaginaExito);

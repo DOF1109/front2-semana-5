@@ -146,6 +146,8 @@ formulario.addEventListener('submit', function (evento) {
 
 
 /* ----------------------------- MESA DE TRABAJO ---------------------------- */
+/* -------------------------------- Clase 10 -------------------------------- */
+
 /* -------------------------------------------------------------------------- */
 /*                [5] FUNCION: Formulario completado con éxito                */
 /* -------------------------------------------------------------------------- */
@@ -157,6 +159,9 @@ formulario.addEventListener('submit', function (evento) {
 // 4 - Cuando vaya a la página de 'usuario.html' NO se debe permitir que mediante el botón de "Atrás"(la flechita del navegador) el usuario vuelva a index.
 
 function navegarPaginaExito() {
+    localStorage.setItem("user", JSON.stringify(estadoUsuario));
+    console.log(JSON.stringify(estadoUsuario));
+
     //   desarrollar la funcion aqui
     const btnSubmit = document.querySelector("form button");
     if (estadoErroresOK.email && estadoErroresOK.password && estadoErroresOK.rol && estadoErroresOK.terminos) {

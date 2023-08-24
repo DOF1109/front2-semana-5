@@ -15,6 +15,7 @@ window.addEventListener('load', function () {
     // utilizamos la funcion para el renderizado
     renderizarElementos(user);
 
+    botonCerrarSesion();
 })
 
 /* -------------------------------------------------------------------------- */
@@ -44,6 +45,7 @@ function renderizarElementos(objeto) {
 
 
 /* ----------------------------- MESA DE TRABAJO ---------------------------- */
+/* -------------------------------- Clase 10 -------------------------------- */
 /* -------------------------------------------------------------------------- */
 /*                     [9] FUNCION: Boton de cerrar sesion                    */
 /* -------------------------------------------------------------------------- */
@@ -66,5 +68,18 @@ function renderizarElementos(objeto) {
 
 function botonCerrarSesion() {
     //    👇 desarrollar la función
+    const btnCerrarSesion = document.createElement("button");
+    btnCerrarSesion.classList.add("btnCerrarSesion");
+    btnCerrarSesion.textContent = "Cerrar sesión";
 
+    const divUser = document.querySelector(".user");
+    console.log(divUser);
+    divUser.appendChild(btnCerrarSesion);
+
+    btnCerrarSesion.addEventListener("click", () => {
+        if ( confirm("¿Seguro desea cerrar sesión?") ){
+            localStorage.clear();
+            location.replace("./index.html");
+        }
+    })
 }
